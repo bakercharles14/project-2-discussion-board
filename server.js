@@ -3,7 +3,7 @@ const app = express()
 const methodOverride = require('method-override')
 
 //CHANGE
-const templateRouter = require('./controllers/template.js')
+const topicRouter = require('./controllers/topic.js')
 
 app.set('view engine', 'hbs')
 
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 //CHANGE
-app.use('/helloworld', templateRouter)
+app.use('/topic', topicRouter)
 
 const port = 3000
 
