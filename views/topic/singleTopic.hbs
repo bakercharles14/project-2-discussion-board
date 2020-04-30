@@ -1,19 +1,16 @@
-<h2>Topic</h2>
-
 <a href="/topic">
   <button>
-    Back to All Topics
+    Back to All Discussion Topics
   </button>
 </a>
+
+<h2>{{singleTopic.title}}</h2>
 
 <a href="/topic/{{singleTopic._id}}/edit">
   <button>
-    Edit
+    Edit Topic Title/Description
   </button>
 </a>
-
-<div class="title">Title</div>
-{{singleTopic.title}}
 
 <div class="title">Description</div>
 {{singleTopic.description}}

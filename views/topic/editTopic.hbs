@@ -1,25 +1,14 @@
 <h2>Update Topic</h2>
 
-<form action="/topic/{{singleTopic._id}}?_method=PUT" method="POST" class="edit-form" method="POST">
+<form action="/topic/{{singleTopic._id}}?_method=PUT" method="POST" class="topic-edit-form" method="POST">
+
+  <label>Title</label>
+  <input type='text' name='title' value='{{singleTopic.title}}' required />
+
   <label>Description</label>
-  <textarea class='description-box' type="text" rows="15" columns="30" name="description"
-    required>{{singleTopic.description}}</textarea>
-
-  <label>Date Created</label>
-  <input type="datetime-local" name="createdAt" value="{{singleTopic.createdAt}}" required />
-
-  <label>Status</label>
-  <select name="status" value="{{singleTopic.status}}" required>
-    <option value="Open">Open</option>
-    <option value="Closed">Closed</option>
-  </select>
-
-  <label>Priority</label>
-  <select name="priority" value="{{singleTopic.priority}}" required>
-    <option value="high">High</option>
-    <option value="medium">Medium</option>
-    <option value="low">Low</option>
-  </select>
+  <textarea type="text" rows="15" columns="30" name="description" required>
+    {{singleTopic.description}}
+  </textarea>
 
   <input type="submit" value="Update Topic" />
 </form>

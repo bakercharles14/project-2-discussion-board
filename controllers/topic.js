@@ -81,4 +81,4 @@ topicRouter.delete('/:id', (req, res) => {
     })
 })
 
-module.exports = topicRouter;
+module.exports = topicRouter

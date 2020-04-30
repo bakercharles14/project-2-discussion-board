@@ -1,3 +1,22 @@
-<h1>This is a sample hbs file</h1>
+<h2>All Topics</h2>
 
-<p> please delete this when you start your project. </p>
+<a href="/topic/new">
+    <button>
+        Submit New Topic
+    </button>
+</a>
+
+{{#each allTopics}}
+<a href="/topic/{{_id}}">
+    <div class="topic-item">
+        <div class="title">Topic</div>
+        {{title}}
+        <div class="title">Description</div>
+        {{description}}
+        <div class="title">Status</div>
+        {{dateCreated}}
+        <div class="title">Priority</div>
+        {{postCounter}}
+    </div>
+</a>
+{{/each}}

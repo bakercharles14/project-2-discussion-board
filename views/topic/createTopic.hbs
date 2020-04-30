@@ -1,12 +1,18 @@
-<form method="POST" action="/<TODO: models url here (e.g: /accounts)>">
+<h2>Create New Topic</h2>
 
-  <!--
-    Template for creating input form for a string object key called stringMember
-    NOTE: for numeric input fields use `type="number"`
-  --->
-  <input type="text" value="{{<TODO: model.stringMember (e.g: account.name)}}" placeholder="name" name="<TODO: stringMember (e.g: name)>" />
+<form action="/topic" class="create-topic-form" method="POST">
+  <label>Title</label>
+  <input type='text' name='title' placeholder="Put Topic Title Here" />
 
-  <input type="checkbox" name="<TODO: model.booleanMember (e.g: account.isActive)" value="true" />
+  <label>Description</label>
+  <textarea type="text" rows="15" columns="30" name="description" placeholder="Input your Topic Description Here"
+    required></textarea>
 
-  <input type="submit" value="Create Shop" />
+  <label>Date</label>
+  <input type="date" name="dateCreated" required />
+
+  <input type="submit" value="Submit Topic" />
+</form>
+<form action="/topic" method="GET">
+  <input type="submit" value="Cancel">
 </form>
