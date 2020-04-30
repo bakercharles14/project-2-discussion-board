@@ -1,3 +1,29 @@
-<form method="POST" action="<TODO: MODELS URL HERE (e.g: /accounts)>?_method=DELETE">
-  <input type="submit" value="Delete" />
+<h2>Topic</h2>
+
+<a href="/topic">
+  <button>
+    Back to All Topics
+  </button>
+</a>
+
+<a href="/topic/{{singleTopic._id}}/edit">
+  <button>
+    Edit
+  </button>
+</a>
+
+<div class="title">Title</div>
+{{singleTopic.title}}
+
+<div class="title">Description</div>
+{{singleTopic.description}}
+
+<div class="title">Date Created</div>
+{{singleTopic.dateCreated}}
+
+<div class="title">0</div>
+{{singleTopic.postCounter}}
+
+<form action="/topic/{{singleTopic._id}}?_method=DELETE" method="POST">
+  <input type="submit" value="Delete">
 </form>

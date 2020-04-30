@@ -1,15 +1,28 @@
-<form method="POST" action="<TODO: models url here (e.g: /accounts)>?_method=PUT">
+<h2>Update Topic</h2>
 
-  <!--
-    Template for creating input form for a string object key called stringMember
-    NOTE: for numeric input fields use `type="number"`
-  -->
-  <input type="text" value="{{<TODO: model.stringMember>}}" name="<TODO: stringMember (e.g: name)>" />
+<form action="/topic/{{singleTopic._id}}?_method=PUT" method="POST" class="edit-form" method="POST">
+  <label>Description</label>
+  <textarea class='description-box' type="text" rows="15" columns="30" name="description"
+    required>{{singleTopic.description}}</textarea>
 
-  <!--
-    Template for creating input form for a boolean object member
-  -->
-  <input type="checkbox" name="<TODO: booleanMember (e.g: isActive)>" value="true" {{#if <TODO: model.booleanMember (e.g: account.isActive)}}checked{{/if}} />
+  <label>Date Created</label>
+  <input type="datetime-local" name="createdAt" value="{{singleTopic.createdAt}}" required />
 
-  <input type="submit" value="Update Shop" />
+  <label>Status</label>
+  <select name="status" value="{{singleTopic.status}}" required>
+    <option value="Open">Open</option>
+    <option value="Closed">Closed</option>
+  </select>
+
+  <label>Priority</label>
+  <select name="priority" value="{{singleTopic.priority}}" required>
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+  </select>
+
+  <input type="submit" value="Update Topic" />
+</form>
+<form action="/topic/{{singleTopic._id}}" method="GET">
+  <input type="submit" value="Cancel">
 </form>

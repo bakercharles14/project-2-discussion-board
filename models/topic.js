@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 //CHANGE
 const topicSchema = new Schema({
   title: String,
+  description: String,
   dateCreated: Date,
   postCounter: Number
 })
