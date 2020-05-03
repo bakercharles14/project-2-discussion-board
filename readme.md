@@ -2,5 +2,6 @@
 ### GitHub Link:
 ### Heroku Link:
 ### ERD Image:
-![Alt text](Project-2-ERD.png)
+![Alt text](./Public/Project-2-ERD.png)
 ### Wire Frame Images:
+![Alt text](Public/webpage-wireframe-image.png)
