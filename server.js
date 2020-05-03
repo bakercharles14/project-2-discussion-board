@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 
 //CHANGE
 const topicRouter = require('./controllers/topic.js')
+const postRouter = require('./controllers/post.js')
 
 app.set('view engine', 'hbs')
 
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 
 //CHANGE
 app.use('/topic', topicRouter)
+app.use('/post', postRouter)
 
 const port = 3000
 

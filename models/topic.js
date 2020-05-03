@@ -36,11 +36,10 @@ const deleteTopic = (id) => {
   return topicCollection.findByIdAndDelete(id)
 }
 
-//CHANGE
 module.exports = {
   getAllTopics,
   getOneTopic,
   createTopic,
   updateTopic,
-  deleteTopic
+  deleteTopic,
 }
