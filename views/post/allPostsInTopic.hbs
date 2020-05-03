@@ -1,0 +1,22 @@
+{{topic._id.title}}
+
+<a href="/post/new">
+    <button>
+        Create New Post
+    </button>
+</a>
+
+{{#each allPosts}}
+<a href="/post/{{_id}}">
+    <div class="post-item">
+        <div class="title">Topic</div>
+        {{title}}
+        <div class="title">Description</div>
+        {{description}}
+        <div class="title">Status</div>
+        {{dateCreated}}
+        <div class="title">Posts</div>
+        {{postCounter}}
+    </div>
+</a>
+{{/each}}
