@@ -1,5 +1,7 @@
 const express = require('express')
 const topicModel = require('../models/topic.js')
+const postModel = require('../models/post.js')
+const commentModel = require('../models/comment.js')
 
 const topicRouter = express.Router()
 
