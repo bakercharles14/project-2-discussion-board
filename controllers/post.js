@@ -16,12 +16,17 @@ postRouter.get('/', (req, res) => {
     })
 })
 
-// CREATE NEW POST FORM
-postRouter.get('/new/:id', (req, res) => {
-    topicModel.getOneTopic(req.params.id)
-    .then((singleTopic) => {
-        res.render('post/createPost', {singleTopic})
-    })
+// CREATE NEW POST FORM when i have associations
+// postRouter.get('/new/:id', (req, res) => {
+//     topicModel.getOneTopic(req.params.id)
+//     .then((singleTopic) => {
+//         res.render('post/createPost', {singleTopic})
+//     })
+// })
+
+//create new post form for before associations
+postRouter.get('/new', (req, res) => {
+  res.render('post/createPost')
 })
 
 // EDIT POST FORM
@@ -40,7 +45,7 @@ postRouter.get('/:id/edit', (req, res) => {
 postRouter.get('/:id', (req, res) => {
     postModel.getOnePost(req.params.id)
     .then((singlePost) => {
-      res.render('topic/singleTopic', { singlePost })
+      res.render('post/singlePost', { singlePost })
     })
     .catch(err => {
       console.log(err)

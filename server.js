@@ -5,6 +5,7 @@ const methodOverride = require('method-override')
 //CHANGE
 const topicRouter = require('./controllers/topic.js')
 const postRouter = require('./controllers/post.js')
+const commentRouter = require('./controllers/comment.js')
 
 app.set('view engine', 'hbs')
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 //CHANGE
 app.use('/topic', topicRouter)
 app.use('/post', postRouter)
+app.use('/comment', commentRouter)
 
 const port = process.env.PORT || 3000
 
