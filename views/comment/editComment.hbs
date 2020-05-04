@@ -1,17 +1,14 @@
-<h2>Update Topic</h2>
+<h2>Edit Comment</h2>
 
-<form action="/topic/{{singleTopic._id}}?_method=PUT" method="POST" class="topic-edit-form" method="POST">
+<form action="/comment/{{singleComment._id}}?_method=PUT" method="POST" class="comment-edit-form" method="POST">
 
-  <label>Title</label>
-  <input type='text' name='title' value='{{singleTopic.title}}' required />
-
-  <label>Description</label>
-  <textarea type="text" rows="15" columns="30" name="description" required>
-    {{singleTopic.description}}
+  <label>Content</label>
+  <textarea type="text" rows="3" columns="35" name="content" required>
+  {{singleComment.content}}
   </textarea>
 
-  <input type="submit" value="Update Topic" />
+  <input type="submit" value="Update Comment" />
 </form>
-<form action="/topic/{{singleTopic._id}}" method="GET">
+<form action="/comment/{{singleComment._id}}" method="GET">
   <input type="submit" value="Cancel">
 </form>

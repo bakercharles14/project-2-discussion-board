@@ -1,18 +1,15 @@
-<h2>Create New Topic</h2>
+<h2>Create Comment</h2>
 
-<form action="/topic" class="create-topic-form" method="POST">
-  <label>Title</label>
-  <input type='text' name='title' placeholder="Put Topic Title Here" />
-
-  <label>Description</label>
-  <textarea type="text" rows="15" columns="30" name="description" placeholder="Input your Topic Description Here"
+<form action="/comment" class="create-comment-form" method="POST">
+  <label>Content</label>
+  <textarea type="text" rows="15" columns="8" name="content" placeholder="Comment Here"
     required></textarea>
 
   <label>Date</label>
-  <input type="date" name="dateCreated" required />
+  <input type="date" name="date" required />
 
-  <input type="submit" value="Submit Topic" />
+  <input type="submit" value="Submit Comment" />
 </form>
-<form action="/topic" method="GET">
+<form action="/comment" method="GET">
   <input type="submit" value="Cancel">
 </form>
