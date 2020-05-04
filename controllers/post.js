@@ -1,5 +1,6 @@
 const express = require('express')
 const postModel = require('../models/post.js')
+const topicModel = require('../models/topic.js')
 
 const postRouter = express.Router()
 
@@ -15,16 +16,19 @@ postRouter.get('/', (req, res) => {
     })
 })
 
-// CREATE NEW FACILITY FORM
-postRouter.get('/new', (req, res) => {
-  res.render('post/createPost')
+// CREATE NEW POST FORM
+postRouter.get('/new/:id', (req, res) => {
+    topicModel.getOneTopic(req.params.id)
+    .then((singleTopic) => {
+        res.render('post/createPost', {singleTopic})
+    })
 })
 
-// EDIT FACILITY FORM
+// EDIT POST FORM
 postRouter.get('/:id/edit', (req, res) => {
     postModel.getOnePost(req.params.id)
     .then((singlePost) => {
-      res.render('topic/editPost', { singlePost })
+      res.render('post/editPost', { singlePost })
     })
     .catch(err => {
       console.log(err)
@@ -48,7 +52,7 @@ postRouter.get('/:id', (req, res) => {
 postRouter.post('/', (req, res) => {
     postModel.createPost(req.body)
     .then(() => {
-      res.redirect('/topic')
+      res.redirect('/post')
     })
     .catch(err => {
       console.log(err)
