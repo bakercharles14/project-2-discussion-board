@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 app.use('/topic', topicRouter)
 app.use('/post', postRouter)
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.listen(port, () => {
     console.log(`App is listening on PORT ${port}`)
