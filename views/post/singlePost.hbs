@@ -4,16 +4,19 @@
   </button>
 </a>
 
-{{topic._id.title}}
+{{allTopics._id.title}}
 
-<div class="title">Description</div>
-{{singlePost.description}}
+<div class="title"></div>
+{{singlePost.image}}
+
+<div class="title">Content</div>
+{{singlePost.content}}
 
 <div class="title">Date Created</div>
-{{singlePost.dateCreated}}
+{{singlePost.date}}
 
-<div class="title">Posts</div>
-{{singlePost.postCounter}}
+<div class="title">Comments</div>
+{{singlePost.commentCounter}}
 
 <a href="/post/{{singlePost._id}}/edit">
   <button>
