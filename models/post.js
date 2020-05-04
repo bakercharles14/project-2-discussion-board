@@ -3,43 +3,43 @@ const Schema = mongoose.Schema
 
 //CHANGE
 const postSchema = new Schema({
-  content: String,
-  date: Date,
-  image: String,
-  commentCounter: Number,
+    content: String,
+    date: Date,
+    image: String,
+    commentCounter: Number,
 })
 
 const postCollection = mongoose.model('post', postSchema)
 
 //get all
 const getAllPosts = () => {
-  return postCollection.find({})
+    return postCollection.find({})
 }
 
 //get one
 const getOnePost = (id) => {
-  return postCollection.findById(id)
+    return postCollection.findById(id)
 }
 
 //create
-const createPost = (newTopic) => {
-  return postCollection.create(newTopic)
+const createPost = (newPost) => {
+    return postCollection.create(newPost)
 }
 
 //update
-const updatePost = (id, newTopic)  => {
-  return postCollection.findByIdAndUpdate(id, newTopic)
+const updatePost = (id, newPost) => {
+    return postCollection.findByIdAndUpdate(id, newPost)
 }
 
 //delete
 const deletePost = (id) => {
-  return postCollection.findByIdAndDelete(id)
+    return postCollection.findByIdAndDelete(id)
 }
 
 module.exports = {
-  getAllPosts,
-  getOnePost,
-  createPost,
-  updatePost,
-  deletePost,
+    getAllPosts,
+    getOnePost,
+    createPost,
+    updatePost,
+    deletePost,
 }
