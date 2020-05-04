@@ -7,7 +7,7 @@ const commentRouter = express.Router()
 commentRouter.get('/', (req, res) => {
     commentModel.getAllComments()
         .then((allComments) => {
-            res.render('comment/allComments', { allComments })
+            res.render('comment/allCommentsInPost', { allComments })
         })
         .catch(err => {
             console.log(err)
