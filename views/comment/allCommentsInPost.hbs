@@ -1,0 +1,19 @@
+{{singleTopic._id.title}}
+{{singlePost._id.content}}
+
+<a href="/comment/new">
+    <button>
+        Submit New Comment
+    </button>
+</a>
+
+{{#each allComments}}
+<a href="/comment/{{_id}}">
+    <div class="comment-item">
+        <div class="title">Date</div>
+        {{date}}
+        <div class="title">Description</div>
+        {{content}}
+    </div>
+</a>
+{{/each}}
