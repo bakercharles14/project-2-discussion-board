@@ -1,17 +1,16 @@
-<h2>Update Topic</h2>
+<h2>Update Post</h2>
 
-<form action="/topic/{{singleTopic._id}}?_method=PUT" method="POST" class="topic-edit-form" method="POST">
+<form action="/post/{{singlePost._id}}?_method=PUT" method="POST" class="post-edit-form" method="POST">
 
-  <label>Title</label>
-  <input type='text' name='title' value='{{singleTopic.title}}' required />
+  <img src='{{image}}' value='{{singlePost._id.image}}'/>
 
-  <label>Description</label>
-  <textarea type="text" rows="15" columns="30" name="description" required>
-    {{singleTopic.description}}
+  <label>What do you want to update?</label>
+  <textarea type="text" rows="15" columns="30" name="content" required>
+    {{singlePost.content}}
   </textarea>
 
-  <input type="submit" value="Update Topic" />
+  <input type="submit" value="Update Post" />
 </form>
-<form action="/topic/{{singleTopic._id}}" method="GET">
+<form action="/post/{{singlePost._id}}" method="GET">
   <input type="submit" value="Cancel">
 </form>

@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const postSchema = new Schema({
   content: String,
   date: Date,
-//   image: Image,
+  image: String,
   commentCounter: Number,
 })
 

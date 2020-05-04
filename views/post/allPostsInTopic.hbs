@@ -9,14 +9,13 @@
 {{#each allPosts}}
 <a href="/post/{{_id}}">
     <div class="post-item">
-        <div class="title">Topic</div>
-        {{title}}
-        <div class="title">Description</div>
-        {{description}}
-        <div class="title">Status</div>
-        {{dateCreated}}
-        <div class="title">Posts</div>
-        {{postCounter}}
+        <img src='{{image}}' />
+        <div class="post-content"></div>
+        {{content}}
+        <div class="date"></div>
+        {{date}}
+        <div class="comment-counter">Comments:</div>
+        {{commentCounter}}
     </div>
 </a>
 {{/each}}
