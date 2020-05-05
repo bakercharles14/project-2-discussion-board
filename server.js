@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(express.static(__dirname+"/Public"))
 
 app.get('/', (req, res) => {
-    res.json('ok')
+    res.redirect('/topic')
 })
 
 //CHANGE
