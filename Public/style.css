@@ -24,17 +24,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 0px;
+    margin: 5px;
+    padding: 5px 0px;
+    border: 2px solid black;
+    height: 80px;
+    width: 700px;
+}
+.new-topic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .title {
     padding: 7px;
 }
 .material-icons {
     color: rgb(180, 14, 14);
-}
-.topic-item {
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

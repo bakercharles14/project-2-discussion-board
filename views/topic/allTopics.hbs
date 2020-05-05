@@ -1,14 +1,16 @@
 <div class="header">All Topics</div>
 
-<a href="/topic/new">
-    <div class="topic-item">
-        <div class="add-topic">
-            <span class="material-icons">
-                add_box
-            </span>
+<div class="topic-item">
+    <a href="/topic/new">
+        <div class="new-topic">
+            <div class="add-topic">
+                <span class="material-icons">
+                    add_box
+                </span>
+            </div>
         </div>
-    </div>
-</a>
+    </a>
+</div>
 
 {{#each allTopics}}
 <a href="/topic/{{_id}}">
