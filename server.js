@@ -12,7 +12,7 @@ app.set('view engine', 'hbs')
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
-app.use(express.static(__dirname+"/public"))
+app.use(express.static(__dirname+"/Public"))
 
 app.get('/', (req, res) => {
     res.json('ok')
