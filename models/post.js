@@ -4,10 +4,10 @@ const Schema = mongoose.Schema
 //CHANGE
 const postSchema = new Schema({
     //to be added for associations
-    // topicId: {
-    //     type: String,
-    //     required: true
-    // },
+    topicId: {
+        type: String,
+        required: true
+    },
     content: String,
     date: Date,
     image: String,
@@ -27,9 +27,9 @@ const getOnePost = (id) => {
 }
 
 //get by topic
-// const getAllPostsByTopicId = (topicId) => {
-//     return postCollection.find({'topicId': topicId})
-// }
+const getAllPostsByTopicId = (topicId) => {
+    return postCollection.find({'topicId': topicId})
+}
 
 //create
 const createPost = (newPost) => {
@@ -49,7 +49,7 @@ const deletePost = (id) => {
 module.exports = {
     getAllPosts,
     getOnePost,
-    // getAllPostsByTopicId,
+    getAllPostsByTopicId,
     createPost,
     updatePost,
     deletePost,
