@@ -9,14 +9,12 @@
 {{#each allTopics}}
 <a href="/topic/{{_id}}">
     <div class="topic-item">
-        <div class="title">Topic</div>
-        {{title}}
-        <div class="title">Description</div>
-        {{description}}
-        <div class="title">Date</div>
-        {{dateCreated}}
-        <div class="title">Posts</div>
+        <div class="title">Posts: <span class="post-number">0</span></div>
         {{postCounter}}
+        <div class="title"></div>
+        {{title}}
+        <div class="title">Date Created</div>
+        {{dateCreated}}
     </div>
 </a>
 {{/each}}

@@ -1,0 +1,9 @@
+.topic-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+}
+.title {
+    padding: 7px;
+}
