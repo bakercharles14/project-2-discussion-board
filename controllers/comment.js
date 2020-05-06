@@ -48,7 +48,7 @@ commentRouter.get('/:id', (req, res) => {
 commentRouter.post('/', (req, res) => {
     commentModel.createComment(req.body)
         .then(() => {
-            res.redirect('/comment')
+            res.redirect(`/post/${req.body.postId}`)
         })
         .catch(err => {
             console.log(err)

@@ -34,18 +34,6 @@ postRouter.get('/:id/edit', (req, res) => {
     })
 })
 
-// GET ONE
-postRouter.get('/:id', (req, res) => {
-    postModel.getOnePost(req.params.id)
-    .then((singlePost) => {
-      res.render('post/singlePost', { singlePost })
-    })
-    .catch(err => {
-      console.log(err)
-      res.json(err)
-    })
-})
-
 //get all comments by post id
 postRouter.get('/:id', (req, res) => {
   postModel.getOnePost(req.params.id)
@@ -65,7 +53,7 @@ postRouter.get('/:id', (req, res) => {
 postRouter.post('/', (req, res) => {
     postModel.createPost(req.body)
     .then(() => {
-      res.redirect('/post')
+      res.redirect(`/topic/${req.body.topicId}`)
     })
     .catch(err => {
       console.log(err)
