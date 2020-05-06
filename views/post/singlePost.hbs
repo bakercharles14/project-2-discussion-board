@@ -35,3 +35,14 @@
 
   <input type="submit" value="Submit Comment" />
 </form>
+
+{{#each allCommentsInPost}}
+<a href="/comment/{{_id}}">
+    <div class="comment-item">
+        <div class="comment-date"></div>
+        {{date}}
+        <div class="comment-content"></div>
+        {{content}}
+    </div>
+</a>
+{{/each}}
