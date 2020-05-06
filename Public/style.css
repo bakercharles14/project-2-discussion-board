@@ -27,6 +27,7 @@ body {
 .header {
     font-size: 35px;
     margin: 5px;
+    font-weight: bold;
 }
 .topic-item {
     display: flex;
