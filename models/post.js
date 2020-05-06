@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 
 //CHANGE
 const postSchema = new Schema({
-    //to be added for associations
     topicId: {
         type: String,
         required: true

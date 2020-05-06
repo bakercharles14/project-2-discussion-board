@@ -1,9 +1,3 @@
-<a href="/post">
-  <button>
-    Back
-  </button>
-</a>
-
 <div class="title">{{singleTopic.title}}</div>
 
 
@@ -32,13 +26,12 @@
 <div>Create Comment</div>
 
 <form action="/comment" class="create-comment-form" method="POST">
+  <input type="hidden" value="{{singlePost._id}}" name="postId" />
   <label>Content</label>
-  <textarea type="text" rows="3" columns="8" name="content" placeholder="Comment Here"
-    required></textarea>
+  <textarea type="text" rows="3" columns="8" name="content" placeholder="Comment Here" required></textarea>
 
   <label>Date</label>
   <input type="date" name="date" required />
 
   <input type="submit" value="Submit Comment" />
 </form>
-

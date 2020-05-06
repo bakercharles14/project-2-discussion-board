@@ -52,7 +52,7 @@ postRouter.get('/:id', (req, res) => {
     .then((singlePost) => {
       commentModel.getAllCommentsByPostId(req.params.id)
         .then((allCommentsInPost) => {
-          res.render('topic/singleTopic', { singlePost, allCommentsInPost })
+          res.render('post/singlePost', { singlePost, allCommentsInPost })
         })
     })
     .catch(err => {
