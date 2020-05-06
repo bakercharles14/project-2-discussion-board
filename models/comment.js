@@ -3,6 +3,10 @@ const Schema = mongoose.Schema
 
 //CHANGE
 const commentSchema = new Schema({
+    postId: {
+        type: String,
+        required: true
+    },
     content: String,
     date: Date,
 })
@@ -17,6 +21,11 @@ const getAllComments = () => {
 //get one
 const getOneComment = (id) => {
     return commentCollection.findById(id)
+}
+
+//get all comments by post id
+const getAllCommentsByPostId = (postId) => {
+    return commentCollection.find({'postId': postId})
 }
 
 //create
@@ -37,6 +46,7 @@ const deleteComment = (id) => {
 module.exports = {
     getAllComments,
     getOneComment,
+    getAllCommentsByPostId,
     createComment,
     updateComment,
     deleteComment,

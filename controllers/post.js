@@ -1,6 +1,7 @@
 const express = require('express')
-const postModel = require('../models/post.js')
 const topicModel = require('../models/topic.js')
+const postModel = require('../models/post.js')
+const commentModel = require('../models/comment.js')
 
 const postRouter = express.Router()
 
@@ -16,15 +17,7 @@ postRouter.get('/', (req, res) => {
     })
 })
 
-// CREATE NEW POST FORM when i have associations
-// postRouter.get('/new/:id', (req, res) => {
-//     topicModel.getOneTopic(req.params.id)
-//     .then((singleTopic) => {
-//         res.render('post/createPost', {singleTopic})
-//     })
-// })
-
-//create new post form for before associations
+//create new post form 
 postRouter.get('/new', (req, res) => {
   res.render('post/createPost')
 })
@@ -46,6 +39,21 @@ postRouter.get('/:id', (req, res) => {
     postModel.getOnePost(req.params.id)
     .then((singlePost) => {
       res.render('post/singlePost', { singlePost })
+    })
+    .catch(err => {
+      console.log(err)
+      res.json(err)
+    })
+})
+
+//get all comments by post id
+postRouter.get('/:id', (req, res) => {
+  postModel.getOnePost(req.params.id)
+    .then((singlePost) => {
+      commentModel.getAllCommentsByPostId(req.params.id)
+        .then((allCommentsInPost) => {
+          res.render('topic/singleTopic', { singlePost, allCommentsInPost })
+        })
     })
     .catch(err => {
       console.log(err)

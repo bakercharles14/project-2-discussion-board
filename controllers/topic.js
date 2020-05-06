@@ -38,10 +38,8 @@ topicRouter.get('/:id/edit', (req, res) => {
 topicRouter.get('/:id', (req, res) => {
   topicModel.getOneTopic(req.params.id)
     .then((singleTopic) => {
-      console.log(singleTopic)
       postModel.getAllPostsByTopicId(req.params.id)
         .then((allPostsInTopic) => {
-          console.log(allPostsInTopic)
           res.render('topic/singleTopic', { singleTopic, allPostsInTopic })
         })
     })
